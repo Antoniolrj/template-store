@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('./styles/reset.scss');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 90px;
+}
+
+.products--grid {
+  app-img {
+    img {
+      border-radius: 10px;
+      max-height: 200px;
+    }
+  }
+}
+
+.btn {
+  margin-left: 0;
+  min-width: 85px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  outline: none;
+  border: 2px solid #ACD9B2;
+  background: #ACD9B2;
+  width: 30%;
+}

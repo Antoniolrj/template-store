@@ -1,0 +1,8 @@
+<h4 *ngIf="cart.length < 1">El carrito esta vacio</h4>
+<div class="cart">
+  <app-product-cart
+    [product]="product"
+    *ngFor="let product of cart"
+    (deletedProduct)="deletedToShoppingCart($event)"
+  ></app-product-cart>
+</div>

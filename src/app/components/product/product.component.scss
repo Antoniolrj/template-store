@@ -1,0 +1,52 @@
+p, h2 {
+  margin: 0;
+}
+
+.buttons-product {
+  display: flex;
+  width: 100%;
+}
+
+button {
+  margin: 5px;
+}
+
+.btn-1 {
+  margin-left: 0;
+  min-width: 85px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  outline: none;
+  border: 2px solid #ACD9B2;
+  background: #ACD9B2;
+  width: 30%;
+}
+
+.btn-2 {
+  margin-right: 0;
+  min-width: 85px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  outline: none;
+  border: 2px solid #ACD9B2;
+  background: #ACD9B2;
+  width: 70%;
+}
+
+.btn-1:hover {
+  background: #fff;
+  color: #ACD9B2
+}
+
+.btn-2:hover {
+  background: #fff;
+  color: #ACD9B2
+}

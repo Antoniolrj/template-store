@@ -1,0 +1,36 @@
+.product-cart {
+  padding: 10px;
+  border: 1px solid #ACD9B2;
+  width: 30%;
+  min-width: 250px;
+  text-align: center;
+}
+
+.product-cart h2, p {
+  margin-bottom: 5px;
+}
+
+.btn-1 {
+  margin-left: 0;
+  min-width: 85px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  outline: none;
+  border: 2px solid #ACD9B2;
+  background: #ACD9B2;
+  width: 30%;
+}
+
+h2 {
+  font-weight: 100;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

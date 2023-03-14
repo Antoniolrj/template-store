@@ -1,0 +1,30 @@
+footer {
+  background-color: rgb(172,217,178);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  color: white;
+}
+
+.icon-social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-social ul li{
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.icon-social ul li a{
+  color: white;
+}
+
+.icon-social ul li a:hover{
+  color: #5fb56a
+}
