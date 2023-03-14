@@ -1,0 +1,44 @@
+
+h5, p {
+  text-align: center;
+  margin: 8px;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column ;
+  align-items: center;
+  width: 25%;
+  min-width: 250px;
+  border: 1px solid #acd9b2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+  outline: none;
+  border: 1px solid #000;
+  width: 80%;
+}
+
+
+input:focus {
+  border: 1px solid #5fb56a;
+  margin-right:10px;
+}
+
+.form > * {
+  margin: 5px;
+}

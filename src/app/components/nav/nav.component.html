@@ -37,7 +37,8 @@
     </nav>
     <div class="info">
       <div class="account">
-        <button class="btn" (click)="btnLogin()">Login</button>
+        <button class="btn" (click)="btnLogin()" *ngIf="!isLogged()">Log-in</button>
+        <button class="btn" (click)="loggedOut()" *ngIf="isLogged()">Log-out</button>
       </div>
       <div class="cart" (click)="openCart()">
         <a href="/cart">

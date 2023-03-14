@@ -13,7 +13,7 @@ export class LoginService {
     private router: Router
   ) { }
 
-  token: string = '';
+  token: string = "";
 
   login(email: string, password: string){
       firebase.auth().signInWithEmailAndPassword(email, password)
@@ -26,7 +26,29 @@ export class LoginService {
         })
   }
 
+  registerUser(email: string, password: string){
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((user) => {
+        console.log(user)
+        this.router.navigate(['/login'])
+      })
+  }
+
   getIdToken(){
     return this.token
   }
+
+  isLogged(){
+    if(this.token != "") return true
+    else return false
+  }
+
+  logOut(){
+    firebase.auth().signOut()
+      .then(() => {
+        this.token = ""
+        this.router.navigate(['/login'])
+      })
+  }
+
 }

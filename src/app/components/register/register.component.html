@@ -1,5 +1,5 @@
 <div>
-  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
     <div class="form">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" required ngModel />
@@ -7,11 +7,10 @@
       <label for="password">Password</label>
       <input type="password" name="password" id="password" ngModel />
 
-      <button type="submit" class="btn">Log in</button>
-    </div>
-    <div>
-      <h5><a href="" routerLink="/register">Registrarse</a></h5>
-      <p>¿Quieres ser vendedor?</p>
+      <label for="repeat-password"> Repeat Password</label>
+      <input type="password" name="repeat-password" id="repeat-password" ngModel />
+
+      <button type="submit" class="btn">Register</button>
     </div>
   </form>
 </div>

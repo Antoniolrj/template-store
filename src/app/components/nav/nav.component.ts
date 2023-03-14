@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 import { StoreService } from '../../services/store.service'
 
@@ -16,6 +17,7 @@ export class NavComponent implements OnInit {
 
   constructor(
     private storeService: StoreService,
+    private loginService: LoginService,
     private router: Router
   ) { }
 
@@ -35,6 +37,14 @@ export class NavComponent implements OnInit {
 
   openCart() {
     this.showCart = !this.showCart
+  }
+
+  isLogged(){
+    return this.loginService.isLogged()
+  }
+
+  loggedOut(){
+    this.loginService.logOut()
   }
 
 }
