@@ -21,7 +21,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-import { LoginGuard } from './services/login-guard';
+import { LoginGuard } from './services/guards/login-guard';
+import { CookieService } from 'ngx-cookie-service';
+import { IsLoginGuard } from './services/guards/is-loggin-guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,7 @@ import { LoginGuard } from './services/login-guard';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
   ],
-  providers: [LoginGuard],
+  providers: [LoginGuard, IsLoginGuard, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

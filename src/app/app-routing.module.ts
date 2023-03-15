@@ -4,13 +4,14 @@ import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { LoginGuard } from './services/login-guard';
+import { LoginGuard } from './services/guards/login-guard';
+import { IsLoginGuard } from './services/guards/is-loggin-guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home'},
   { path: 'home', component:HomeComponent, canActivate:[LoginGuard] },
   { path: 'cart', component:CartComponent },
-  { path: 'login', component:LoginComponent },
+  { path: 'login', component:LoginComponent, canActivate:[IsLoginGuard] },
   { path: 'register', component:RegisterComponent }
 ];
 

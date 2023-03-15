@@ -18,7 +18,8 @@ export class ProductComponent {
       id:'',
       name:'',
     },
-    description: ''
+    description: '',
+    qty: 1
   };
   @Output() addedProduct = new EventEmitter<Product>();
 

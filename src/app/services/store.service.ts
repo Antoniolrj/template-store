@@ -29,11 +29,21 @@ export class StoreService {
   }
 
   getTotal() {
-    return this.myShoppingCart.reduce((sum, item) => sum + item.price, 0);
+    return this.myShoppingCart.reduce((sum, item) => sum + (item.price * item.qty), 0);
   }
 
   deleteItem(product: Product) {
     this.myShoppingCart = this.myShoppingCart.filter(item => item != product)
+    localStorage.setItem('cart', JSON.stringify(this.myShoppingCart))
+    this.myCart.next(this.myShoppingCart);
+  }
+
+  updateQty(product: Product) {
+    this.myShoppingCart.map((item) => {
+      if(item.id == product.id){
+        item.qty = product.qty
+      }
+    })
     localStorage.setItem('cart', JSON.stringify(this.myShoppingCart))
     this.myCart.next(this.myShoppingCart);
   }

@@ -5,9 +5,10 @@ export interface Product {
   images: string [];
   description: string;
   category: Category;
+  qty: number;
 }
 
-export interface Category{
+export interface Category {
   id: string;
   name: string;
 }

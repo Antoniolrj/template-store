@@ -14,6 +14,7 @@ export class NavComponent implements OnInit {
   activeMenu = false;
   showCart = false;
   counter = 0;
+  username = ''
 
   constructor(
     private storeService: StoreService,
@@ -45,6 +46,11 @@ export class NavComponent implements OnInit {
 
   loggedOut(){
     this.loginService.logOut()
+  }
+
+  currentUser(){
+    this.username = this.loginService.getCurrentUser()?.email || ''
+    return this.username
   }
 
 }

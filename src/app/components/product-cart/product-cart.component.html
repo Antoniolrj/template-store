@@ -1,6 +1,11 @@
 <div class="product-cart">
-  <h2><b>{{ product.price | currency:'EUR' }}</b></h2>
+  <h2><b>{{ product.price * product.qty | currency:'EUR' }}</b></h2>
   <p>{{ product.title }}</p>
+  <div class="qty">
+    <button class="btn-1" (click)="upQtyItem()">+</button>
+    <p>Cantidad: {{ product.qty }}</p>
+    <button class="btn-1" (click)="downQtyItem()">-</button>
+  </div>
   <div class="buttons-product">
     <button class="btn-1" (click)="deleteProduct()">Eliminar</button>
   </div>

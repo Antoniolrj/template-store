@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
 
 import 'firebase/compat/auth'
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ import 'firebase/compat/auth'
 export class LoginService {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private cookiesService: CookieService
   ) { }
 
   token: string = "";
@@ -21,25 +23,26 @@ export class LoginService {
           firebase.auth().currentUser?.getIdToken()
             .then(token => {
               this.token = token
+              this.cookiesService.set("token", this.token)
               this.router.navigate(['/'])
             })
         })
   }
 
   registerUser(email: string, password: string){
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log(user)
-        this.router.navigate(['/login'])
-      })
+    return firebase.auth().createUserWithEmailAndPassword(email, password)
   }
 
   getIdToken(){
-    return this.token
+    return this.cookiesService.get("token")
+  }
+
+  getCurrentUser(){
+    return firebase.auth().currentUser
   }
 
   isLogged(){
-    if(this.token != "") return true
+    if(this.getIdToken() != "") return true
     else return false
   }
 
@@ -47,8 +50,25 @@ export class LoginService {
     firebase.auth().signOut()
       .then(() => {
         this.token = ""
+        this.cookiesService.set("token", this.token)
         this.router.navigate(['/login'])
       })
+  }
+
+  firebaseError(code: string){
+    switch(code){
+      case 'auth/email-already-in-use':
+        return 'User already exists';
+
+      case 'auth/weak-password':
+        return 'Weak password'
+
+      case 'auth/invalid-email':
+        return 'Invalid Email'
+
+      default:
+        return 'Unknown error'
+    }
   }
 
 }

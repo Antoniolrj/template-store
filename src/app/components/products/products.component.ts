@@ -28,6 +28,7 @@ export class ProductsComponent implements OnInit {
     this.productsService.getAllProducts()
     .subscribe(data => {
       this.products = data;
+      this.products.map(product => product.qty = 1)
     });
   }
 

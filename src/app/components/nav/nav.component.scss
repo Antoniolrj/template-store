@@ -81,7 +81,12 @@ button{
     display: flex;
     align-items: center;
     .account {
-      margin-right: .5em;
+      display: flex;
+      margin: .5em;
+      justify-content: space-between;
+      p {
+        margin: 10px;
+      }
     }
 
   }

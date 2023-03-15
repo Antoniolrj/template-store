@@ -1,6 +1,8 @@
 <app-img *ngIf="product.images.length > 0" [img]="product.images[0]"></app-img>
-<h2>{{ product.price | currency:'COP' }}</h2>
-<p>{{ product.title }}</p>
+<h2>{{ product.title }}</h2>
+<h2>{{ product.price }}€</h2>
+<label for="qty">Cantidad: </label>
+<input type="number" name="qty" id="qty" [(ngModel)] = "product.qty">
 <div class="buttons-product">
   <button class="btn-1" (click)="onAddToCart()">Add cart</button>
   <button class="btn-2">Show product</button>

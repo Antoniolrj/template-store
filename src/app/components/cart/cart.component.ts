@@ -10,6 +10,7 @@ import { StoreService } from 'src/app/services/store.service';
 export class CartComponent implements OnInit {
 
   cart: Product[] = []
+  total: number = 0
 
   constructor(
     private storeService: StoreService
@@ -19,6 +20,8 @@ export class CartComponent implements OnInit {
     this.storeService.myCart$.subscribe(products => {
       this.cart = products
     });
+
+    this.total = this.storeService.getTotal()
   }
 
   clearCart() {
@@ -27,6 +30,12 @@ export class CartComponent implements OnInit {
 
   deletedToShoppingCart(product: Product){
     this.storeService.deleteItem(product)
+    this.total = this.storeService.getTotal()
+  }
+
+  updateQty(product: Product){
+    this.storeService.updateQty(product)
+    this.total = this.storeService.getTotal()
   }
 
 }

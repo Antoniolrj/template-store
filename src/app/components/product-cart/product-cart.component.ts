@@ -17,13 +17,25 @@ export class ProductCartComponent {
       id:'',
       name:'',
     },
-    description: ''
+    description: '',
+    qty: 1
   };
 
   @Output() deletedProduct = new EventEmitter<Product>();
+  @Output() updateQtyItem = new EventEmitter<Product>();
 
   deleteProduct(){
     this.deletedProduct.emit(this.product)
+  }
+
+  upQtyItem() {
+    this.product.qty++
+    this.updateQtyItem.emit(this.product)
+  }
+
+  downQtyItem() {
+    this.product.qty--
+    this.updateQtyItem.emit(this.product)
   }
 
 }
