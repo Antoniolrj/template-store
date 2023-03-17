@@ -1,0 +1,48 @@
+.vertical-menu {
+  width: 20%; /* Set a width if you like */
+  margin: 15px;
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #5fb56a;
+  color: white; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #ACD9B2; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+a{
+  cursor: pointer;
+}
+
+.dashboard {
+  display: flex;
+  width: 100%;
+}
+
+.orders{
+  width: 80%;
+  margin: 15px;
+}
+
+.home{
+  width: 80%;
+  margin: 15px;
+}
+
+.my-data{
+  width: 80%;
+  margin: 15px;
+}
+
+

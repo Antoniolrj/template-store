@@ -39,6 +39,7 @@
       <div class="account">
         <p *ngIf="currentUser() != '' "> {{ username }} </p>
         <button class="btn" (click)="btnLogin()" *ngIf="!isLogged()">Log-in</button>
+        <button class="btn" (click)="btnMyProfile()" *ngIf="isLogged()">My Profile</button>
         <button class="btn" (click)="loggedOut()" *ngIf="isLogged()">Log-out</button>
       </div>
       <div class="cart" (click)="openCart()">

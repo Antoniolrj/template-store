@@ -36,6 +36,10 @@ export class NavComponent implements OnInit {
     this.router.navigate(['login'])
   }
 
+  btnMyProfile(){
+    this.router.navigate(['dashboard'])
+  }
+
   openCart() {
     this.showCart = !this.showCart
   }

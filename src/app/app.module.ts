@@ -27,6 +27,7 @@ import { IsLoginGuard } from './services/guards/is-loggin-guard';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PayMethodComponent } from './components/pay-method/pay-method.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OnlyNumberDirective } from './directives/only-number.directive';
     RegisterComponent,
     PurchaseComponent,
     PayMethodComponent,
-    OnlyNumberDirective
+    OnlyNumberDirective,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

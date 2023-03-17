@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginGuard } from './services/guards/login-guard';
 import { IsLoginGuard } from './services/guards/is-loggin-guard';
 import { PurchaseComponent } from './components/purchase/purchase.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'cart', component:CartComponent },
   { path: 'login', component:LoginComponent, canActivate:[IsLoginGuard] },
   { path: 'register', component:RegisterComponent },
-  { path: 'purchase', component: PurchaseComponent }
+  { path: 'purchase', component: PurchaseComponent },
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({

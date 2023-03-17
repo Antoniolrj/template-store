@@ -1,0 +1,18 @@
+<div class="dashboard">
+  <div class="vertical-menu">
+    <a (click)="onShowHome()" [class.active]="showHome">Home</a>
+    <a (click)="onShowOrders()" [class.active]="showOrders">Orders</a>
+    <a (click)="onShowMyData()" [class.active]="showMyData">My Data </a>
+  </div>
+  <div *ngIf="showHome" class="home">
+    <p>Mi nombre es antonio</p>
+  </div>
+  <div *ngIf="showOrders" class="orders">
+    <div class="order" *ngFor="let order of orders">
+      {{ order.id }}
+    </div>
+  </div>
+  <div *ngIf="showMyData" class="my-data">
+
+  </div>
+</div>
