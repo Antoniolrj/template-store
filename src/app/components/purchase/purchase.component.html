@@ -1,0 +1,13 @@
+<h2>Pay Method</h2>
+  <div class="pay-method" *ngFor="let payMethod of payMethods" >
+    <label for="payMethod">
+      <input type="radio" name="payMethod" value="{{payMethod.id}}" id="{{payMethod.title}}" [(ngModel)]="payMethodSelected">
+      <app-img *ngIf="payMethod.image != ''" [img]="payMethod.image"></app-img>
+    </label>
+ </div>
+ <div class="btn-pay">
+  <button (click)="onCheckOut()" class="btn">CheckOut</button>
+ </div>
+
+
+

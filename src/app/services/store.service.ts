@@ -19,7 +19,15 @@ export class StoreService {
   }
 
   addProduct(product: Product) {
-    this.myShoppingCart.push(product);
+    this.myShoppingCart = JSON.parse(localStorage.getItem('cart') || "[]")
+    let productExist = false
+    this.myShoppingCart.forEach((item) => {
+      if(item.id == product.id){
+        item.qty = item.qty + product.qty
+        productExist = true
+      }
+    })
+    if(!productExist) this.myShoppingCart.push(product);
     localStorage.setItem('cart', JSON.stringify(this.myShoppingCart))
     this.myCart.next(this.myShoppingCart);
   }

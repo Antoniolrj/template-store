@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 import { Product } from '../../models/product.model';
 
@@ -7,7 +7,7 @@ import { Product } from '../../models/product.model';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
   @Input() product: Product = {
     id: '',
@@ -23,10 +23,21 @@ export class ProductComponent {
   };
   @Output() addedProduct = new EventEmitter<Product>();
 
+  @ViewChild("qty") inputQty!: ElementRef;
+
+
   constructor() { }
 
-  onAddToCart() {
-    this.addedProduct.emit(this.product);
+  ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    this.inputQty.nativeElement.value = 1
+  }
+
+  onAddToCart() {
+    var qtyNumber: number = +this.inputQty.nativeElement.value
+    this.product.qty = qtyNumber
+    this.addedProduct.emit(this.product);
+  }
 }

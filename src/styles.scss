@@ -18,6 +18,10 @@ body {
   margin-bottom: 90px;
 }
 
+h2 {
+  font-weight: bold;
+}
+
 .products--grid {
   app-img {
     img {
@@ -39,5 +43,4 @@ body {
   outline: none;
   border: 2px solid #ACD9B2;
   background: #ACD9B2;
-  width: 30%;
 }

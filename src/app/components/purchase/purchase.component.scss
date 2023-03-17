@@ -1,0 +1,33 @@
+.pay-method {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-method {
+  app-img {
+    img {
+      border-radius: 10px;
+      max-height: 200px;
+      width: 30%;
+    }
+  }
+}
+
+.btn-pay {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-pay > button {
+  width: 30%;
+  height: 5vh;
+}
+
+label {
+  border: 1px solid;
+  margin: 15px;
+  padding: 15px;
+  width: 30%;
+}

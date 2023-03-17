@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
 
   cart: Product[] = []
   total: number = 0
+  messageError: string = ''
 
   constructor(
     private storeService: StoreService
@@ -34,8 +35,7 @@ export class CartComponent implements OnInit {
   }
 
   updateQty(product: Product){
-    this.storeService.updateQty(product)
-    this.total = this.storeService.getTotal()
+      this.storeService.updateQty(product)
+      this.total = this.storeService.getTotal()
   }
-
 }

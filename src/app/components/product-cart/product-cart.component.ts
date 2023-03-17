@@ -34,8 +34,10 @@ export class ProductCartComponent {
   }
 
   downQtyItem() {
-    this.product.qty--
-    this.updateQtyItem.emit(this.product)
+    if(this.product.qty - 1 > 0){
+      this.product.qty--
+      this.updateQtyItem.emit(this.product)
+    }
   }
 
 }

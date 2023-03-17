@@ -11,6 +11,9 @@
     ></app-product-cart>
   </div>
   <div class="total-cart">
-    <h2>Total: {{ total }} €</h2>
+    <h2 *ngIf="total>0">Total: {{ total }} €</h2>
+  </div>
+  <div *ngIf="total>0" class="purchase">
+    <button class="btn" routerLink="/purchase">Make a purchase</button>
   </div>
 </div>

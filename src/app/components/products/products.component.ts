@@ -33,6 +33,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onAddToShoppingCart(product: Product) {
+    console.log(product.qty)
     this.storeService.addProduct(product);
     this.total = this.storeService.getTotal();
   }

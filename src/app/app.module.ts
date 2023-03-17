@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { LoginGuard } from './services/guards/login-guard';
 import { CookieService } from 'ngx-cookie-service';
 import { IsLoginGuard } from './services/guards/is-loggin-guard';
+import { PurchaseComponent } from './components/purchase/purchase.component';
+import { PayMethodComponent } from './components/pay-method/pay-method.component';
+import { OnlyNumberDirective } from './directives/only-number.directive';
 
 @NgModule({
   declarations: [
@@ -40,13 +43,17 @@ import { IsLoginGuard } from './services/guards/is-loggin-guard';
     CartComponent,
     ProductCartComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    PurchaseComponent,
+    PayMethodComponent,
+    OnlyNumberDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
   ],
