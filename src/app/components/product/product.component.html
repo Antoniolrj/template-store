@@ -7,6 +7,6 @@
 </form>
 <div class="buttons-product">
   <button class="btn-1" (click)="onAddToCart()">Add cart</button>
-  <button class="btn-2">Show product</button>
+  <button [routerLink]="['/product', product.id]" class="btn-2">Show product</button>
 </div>
 

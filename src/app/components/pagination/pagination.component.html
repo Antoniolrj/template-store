@@ -1,0 +1,13 @@
+<div class="pagination">
+
+  <div *ngIf="currentPage > 1" class="pagination__prev"><a>Anterior</a></div>
+
+  <div class="pagination__text">
+
+      <p>Página {{currentPage}} de {{totalPages}}</p>
+
+  </div>
+
+  <div *ngIf="currentPage < totalPages" class="pagination__next"><a>Siguiente</a></div>
+
+</div>

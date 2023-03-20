@@ -8,6 +8,8 @@ import { LoginGuard } from './services/guards/login-guard';
 import { IsLoginGuard } from './services/guards/is-loggin-guard';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PageErrorComponent } from './components/page-error/page-error.component';
+import { PageProductComponent } from './components/page-product/page-product.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent, canActivate:[IsLoginGuard] },
   { path: 'register', component:RegisterComponent },
   { path: 'purchase', component: PurchaseComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent, canActivate:[LoginGuard] },
+  { path: 'product/:id', component: PageProductComponent },
+  { path: '**', component: PageErrorComponent }
 ];
 
 @NgModule({

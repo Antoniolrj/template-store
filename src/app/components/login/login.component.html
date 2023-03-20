@@ -9,6 +9,7 @@
 
       <button type="submit" class="btn">Log in</button>
     </div>
+    <p *ngIf="messageError" class="message-error">{{ messageError }}</p>
     <div>
       <h5><a href="" routerLink="/register">Register</a></h5>
       <p><a href="" routerLink="">Do you want a seller?</a></p>

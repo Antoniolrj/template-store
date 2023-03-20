@@ -28,6 +28,9 @@ import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PayMethodComponent } from './components/pay-method/pay-method.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PageErrorComponent } from './components/page-error/page-error.component';
+import { PageProductComponent } from './components/page-product/page-product.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     PurchaseComponent,
     PayMethodComponent,
     OnlyNumberDirective,
-    DashboardComponent
+    DashboardComponent,
+    PageErrorComponent,
+    PageProductComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

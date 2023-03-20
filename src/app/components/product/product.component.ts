@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
     description: '',
     qty: 1
   };
+
   @Output() addedProduct = new EventEmitter<Product>();
 
   @ViewChild("qty") inputQty!: ElementRef;

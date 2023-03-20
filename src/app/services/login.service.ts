@@ -18,15 +18,7 @@ export class LoginService {
   token: string = "";
 
   login(email: string, password: string){
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(data => {
-          firebase.auth().currentUser?.getIdToken()
-            .then(token => {
-              this.token = token
-              this.cookiesService.set("token", this.token)
-              this.router.navigate(['/'])
-            })
-        })
+      return firebase.auth().signInWithEmailAndPassword(email, password)
   }
 
   registerUser(email: string, password: string){
@@ -35,6 +27,11 @@ export class LoginService {
 
   getIdToken(){
     return this.cookiesService.get("token")
+  }
+
+  setToken(token: string){
+    this.token = token
+    this.cookiesService.set("token", this.token)
   }
 
   getCurrentUser(){
@@ -65,6 +62,12 @@ export class LoginService {
 
       case 'auth/invalid-email':
         return 'Invalid Email'
+
+      case 'auth/user-not-found':
+        return 'User not found. You must registered'
+
+      case 'auth/wrong-password':
+        return 'Invalid Password'
 
       default:
         return 'Unknown error'
