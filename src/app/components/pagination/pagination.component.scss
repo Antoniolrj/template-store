@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination__next{
+  margin: 5px;
+}
+
+.pagination__next:hover{
+  cursor: pointer;
+}
+
+.pagination__prev{
+  margin: 5px;
+}
+
+.pagination__prev:hover{
+  cursor: pointer;
+}

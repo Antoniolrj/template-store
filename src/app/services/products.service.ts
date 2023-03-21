@@ -7,7 +7,7 @@ import { Product } from './../models/product.model';
 })
 export class ProductsService {
 
-  URL_BASED = ' https://api.escuelajs.co/api/v1/'
+  URL_BASED = 'https://api.escuelajs.co/api/v1/'
   constructor(
     private http: HttpClient
   ) { }
@@ -26,4 +26,5 @@ export class ProductsService {
   getProduct(id: number){
     return this.http.get<Product>(this.URL_BASED + 'products/' + id)
   }
+
 }

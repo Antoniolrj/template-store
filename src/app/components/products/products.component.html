@@ -12,4 +12,6 @@
   </div>
 </div>
 
-<app-pagination></app-pagination>
+<app-pagination
+  (currentPageEmit)="changePage($event)"
+></app-pagination>

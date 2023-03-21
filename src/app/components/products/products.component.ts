@@ -16,6 +16,9 @@ export class ProductsComponent implements OnInit {
   total = 0;
   products: Product[] = [];
   showProductDetail = false;
+  currentPage = 1
+  offset = 0
+  limit = 10
 
   constructor(
     private storeService: StoreService,
@@ -25,7 +28,7 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productsService.getAllProducts()
+    this.productsService.getAllProductsByPage(this.offset, this.limit)
     .subscribe(data => {
       this.products = data;
       this.products.map(product => product.qty = 1)
@@ -33,7 +36,6 @@ export class ProductsComponent implements OnInit {
   }
 
   onAddToShoppingCart(product: Product) {
-    console.log(product.qty)
     this.storeService.addProduct(product);
     this.total = this.storeService.getTotal();
   }
@@ -42,4 +44,11 @@ export class ProductsComponent implements OnInit {
     this.showProductDetail = !this.showProductDetail;
   }
 
+  changePage(offset: number){
+    this.productsService.getAllProductsByPage(offset, this.limit)
+    .subscribe(data => {
+      this.products = data;
+      this.products.map(product => product.qty = 1)
+    });
+  }
 }
